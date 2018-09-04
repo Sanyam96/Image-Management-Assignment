@@ -2,6 +2,7 @@ package com.nagarro.controller;
 
 import com.nagarro.models.User;
 import com.nagarro.services.LoginImplementation;
+import com.nagarro.utils.Constants;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -15,9 +16,6 @@ import java.io.IOException;
 public class ResetPassword extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
     public ResetPassword() {
         super();
     }
@@ -33,7 +31,6 @@ public class ResetPassword extends HttpServlet {
      * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
      */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // TODO Auto-generated method stub
         String message = "";
         request.getSession().setAttribute("message", "");
         LoginImplementation login = new LoginImplementation();
@@ -62,7 +59,7 @@ public class ResetPassword extends HttpServlet {
         }
         System.out.println(message);
 
-        response.sendRedirect("index.jsp");
+        response.sendRedirect(Constants.indexPage);
     }
 
 }

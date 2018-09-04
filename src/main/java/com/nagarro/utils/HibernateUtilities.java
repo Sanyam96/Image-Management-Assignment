@@ -5,6 +5,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
 /**
+ * Hibernate Utility
  * @author Sanyam Goel created on 4/9/18
  */
 public class HibernateUtilities {

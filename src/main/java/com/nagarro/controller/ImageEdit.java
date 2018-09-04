@@ -4,6 +4,7 @@ import com.nagarro.models.Image;
 import com.nagarro.models.User;
 import com.nagarro.services.ImageManagementImplementation;
 import com.nagarro.services.LoginImplementation;
+import com.nagarro.utils.Constants;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
@@ -16,6 +17,7 @@ import java.io.IOException;
 import java.util.List;
 
 /**
+ * Class to edit the image for a user
  * @author Sanyam Goel created on 4/9/18
  */
 public class ImageEdit extends HttpServlet {
@@ -41,7 +43,7 @@ public class ImageEdit extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         User user = (User) request.getSession().getAttribute("user");
         if (request.getSession().getAttribute("user") == null) {
-            response.sendRedirect("index.jsp");
+            response.sendRedirect(Constants.indexPage);
         } else {
             LoginImplementation login = new LoginImplementation();
             String imageId = request.getParameter("imageId");
@@ -94,7 +96,7 @@ public class ImageEdit extends HttpServlet {
             }
             User userUpdated = login.getUserDetails(((User) request.getSession().getAttribute("user")).getUsername());
             request.getSession().setAttribute("user", userUpdated);
-            response.sendRedirect("userhome.jsp");
+            response.sendRedirect(Constants.userPage);
         }
     }
 }

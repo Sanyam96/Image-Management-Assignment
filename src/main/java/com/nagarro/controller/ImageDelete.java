@@ -3,6 +3,7 @@ package com.nagarro.controller;
 import com.nagarro.models.User;
 import com.nagarro.services.ImageManagementImplementation;
 import com.nagarro.services.LoginImplementation;
+import com.nagarro.utils.Constants;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -14,6 +15,7 @@ import java.io.IOException;
  * @author Sanyam Goel created on 4/9/18
  */
 public class ImageDelete extends HttpServlet {
+
     private static final long serialVersionUID = 1L;
 
     /**
@@ -39,7 +41,7 @@ public class ImageDelete extends HttpServlet {
             System.out.println(imageid + "deleted");
             User userUpdated = login.getUserDetails(((User) request.getSession().getAttribute("user")).getUsername());
             request.getSession().setAttribute("user", userUpdated);
-            response.sendRedirect("userhome.jsp");
+            response.sendRedirect(Constants.userPage);
         }
     }
 

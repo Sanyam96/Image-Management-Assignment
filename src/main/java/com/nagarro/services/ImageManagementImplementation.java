@@ -13,7 +13,6 @@ public class ImageManagementImplementation implements ImageManagementInterface {
 
     /*
      * add an image to database corresponding to a given user
-     * @see com.nagarro.dao.api.ImageManagementInterface#addImage(com.nagarro.models.Image)
      */
     @Override
     public void addImage(Image image) {
@@ -28,16 +27,12 @@ public class ImageManagementImplementation implements ImageManagementInterface {
 
     /*
      * get an image from database
-     * @see com.nagarro.dao.api.ImageManagementInterface#getImage(java.lang.String)
      */
     @Override
     public Image getImage(String imageId) {
         Image image = null;
         try (Session session = HibernateUtilities.getSessionInstance();) {
             session.getTransaction().begin();
-            //image = (Image) session.get("Image.class", Long.parseLong(imageId));
-            //session.getTransaction().commit();
-            //session.close();
             String queryString = "from Image where imageId = :imageId";
             Query query = session.createQuery(queryString).setString("imageId", imageId);
 
@@ -52,7 +47,6 @@ public class ImageManagementImplementation implements ImageManagementInterface {
 
     /*
      * method to edit an image
-     * @see com.nagarro.dao.api.ImageManagementInterface#editImage(com.nagarro.models.Image)
      */
     @Override
     public void editImage(Image newImage) {
@@ -67,7 +61,6 @@ public class ImageManagementImplementation implements ImageManagementInterface {
 
     /*
      * method to delete an image present in database using HQL
-     * @see com.nagarro.dao.api.ImageManagementInterface#deleteImage(java.lang.String)
      */
     @Override
     public void deleteImage(String imageid) {

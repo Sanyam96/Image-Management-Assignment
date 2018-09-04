@@ -10,11 +10,12 @@ import org.hibernate.Session;
  */
 public class LoginImplementation implements LoginInterface {
 
-    /*
+    /**
      * returns true if user with the given name and password exists
-     * @param username, password
-     * @return Boolean
-     * @see com.nagarro.dao.api.LoginInterface#userAuthentication(java.lang.String, java.lang.String)
+     *
+     * @param username
+     * @param password
+     * @return
      */
     @Override
     public Boolean userAuthentication(String username, String password) {
@@ -31,11 +32,11 @@ public class LoginImplementation implements LoginInterface {
         return false;
     }
 
-    /*
+    /**
      * Returns user with given username
+     *
      * @param username
-     * @return user
-     * @see com.nagarro.dao.api.LoginInterface#getUserDetails(java.lang.String)
+     * @return
      */
     @Override
     public User getUserDetails(String username) {

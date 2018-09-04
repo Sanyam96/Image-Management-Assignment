@@ -2,6 +2,7 @@ package com.nagarro.controller;
 
 import com.nagarro.models.Image;
 import com.nagarro.services.ImageManagementImplementation;
+import com.nagarro.utils.Constants;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -10,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
+ * Class to retieve the Images for a User
  * @author Sanyam Goel created on 4/9/18
  */
 public class ImageRetriever extends HttpServlet {
@@ -20,18 +22,15 @@ public class ImageRetriever extends HttpServlet {
      */
     public ImageRetriever() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
     /**
      * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
      */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // TODO Auto-generated method stub
-        if(request.getSession().getAttribute("user") == null) {
-            response.sendRedirect("index.jsp");
-        }
-        else {
+        if (request.getSession().getAttribute("user") == null) {
+            response.sendRedirect(Constants.indexPage);
+        } else {
             ImageManagementImplementation imageManagement = new ImageManagementImplementation();
             String imageId = request.getParameter("imageId");
             Image image = imageManagement.getImage(imageId);

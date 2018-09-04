@@ -86,25 +86,19 @@
 
         <div class="container">
             <div class="row">
-
-
                 <div class="col-md-12">
                     <h4>Images Available</h4>
                     <div class="table-responsive">
-
-
                         <table id="mytable" class="table table-bordred table-striped">
-
                             <thead>
-
                                 <th>Image Id</th>
                                 <th>Image</th>
                                 <th>Image Name</th>
                                 <th>Image Size</th>
                                 <th>Edit</th>
-
                                 <th>Delete</th>
                             </thead>
+
                             <tbody>
                                 <%
                                     Collection<Image> images = user.getImages();
@@ -168,10 +162,11 @@
                                     }
                                     }
                                 %>
-                                </div>
-                                </div>
-                                </div>
-                                </div>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
     </html>
     </body>

@@ -1,5 +1,7 @@
 package com.nagarro.controller;
 
+import com.nagarro.utils.Constants;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -12,9 +14,6 @@ import java.io.IOException;
 public class Logout extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
     public Logout() {
         super();
     }
@@ -27,14 +26,7 @@ public class Logout extends HttpServlet {
         request.getSession().removeAttribute("user");
         request.getSession().removeAttribute("authorized");
         request.getSession().invalidate();
-        response.sendRedirect("logout.jsp");
-    }
-
-    /**
-     * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-     */
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        //doGet(request, response);
+        response.sendRedirect(Constants.logoutPage);
     }
 
 }

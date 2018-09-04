@@ -5,6 +5,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
+ * User Domain class
  * @author Sanyam Goel created on 4/9/18
  */
 

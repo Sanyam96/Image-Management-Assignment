@@ -3,6 +3,7 @@ package com.nagarro.models;
 import javax.persistence.*;
 
 /**
+ * Image Domain class
  * @author Sanyam Goel created on 4/9/18
  */
 
@@ -26,7 +27,6 @@ public class Image {
     private double imageSize;
 
     @ManyToOne
-    //@JoinColumn(name = "user_email", nullable = false)
     @JoinColumn(name = "user_username", nullable = false)
     private User user;
 

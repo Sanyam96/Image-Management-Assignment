@@ -2,6 +2,7 @@ package com.nagarro.controller;
 
 import com.nagarro.models.User;
 import com.nagarro.services.LoginImplementation;
+import com.nagarro.utils.Constants;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -15,9 +16,6 @@ import java.io.IOException;
 public class Login extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
-    /**
-     * Default constructor.
-     */
     public Login() {
         // TODO Auto-generated constructor stub
     }
@@ -39,10 +37,10 @@ public class Login extends HttpServlet {
             User user = login.getUserDetails(username);
             request.getSession().setAttribute("authorized", "true");
             request.getSession().setAttribute("user", user);
-            response.sendRedirect("userhome.jsp");
+            response.sendRedirect(Constants.redirectPage);
         } else {
             request.getSession().setAttribute("authorized", "false");
-            response.sendRedirect("index.jsp");
+            response.sendRedirect(Constants.indexPage);
         }
     }
 }
