@@ -1,0 +1,79 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+
+  <servlet>
+    <servlet-name>Login</servlet-name>
+    <display-name>Login</display-name>
+    <description></description>
+    <servlet-class>com.nagarro.controller.Login</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>Logout</servlet-name>
+    <display-name>Logout</display-name>
+    <description></description>
+    <servlet-class>com.nagarro.controller.Logout</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ImageUpload</servlet-name>
+    <display-name>ImageUpload</display-name>
+    <description></description>
+    <servlet-class>com.nagarro.controller.ImageUpload</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ImageDelete</servlet-name>
+    <display-name>ImageDelete</display-name>
+    <description></description>
+    <servlet-class>com.nagarro.controller.ImageDelete</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ImageEdit</servlet-name>
+    <display-name>ImageEdit</display-name>
+    <description></description>
+    <servlet-class>com.nagarro.controller.ImageEdit</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ImageRetriever</servlet-name>
+    <display-name>ImageRetriever</display-name>
+    <description></description>
+    <servlet-class>com.nagarro.controller.ImageRetriever</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ResetPassword</servlet-name>
+    <display-name>ResetPassword</display-name>
+    <description></description>
+    <servlet-class>com.nagarro.controller.ResetPassword</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Login</servlet-name>
+    <url-pattern>/Login</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Logout</servlet-name>
+    <url-pattern>/Logout</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ImageUpload</servlet-name>
+    <url-pattern>/ImageUpload</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ImageDelete</servlet-name>
+    <url-pattern>/ImageDelete</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ImageEdit</servlet-name>
+    <url-pattern>/ImageEdit</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ImageRetriever</servlet-name>
+    <url-pattern>/ImageRetriever</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ResetPassword</servlet-name>
+    <url-pattern>/ResetPassword</url-pattern>
+  </servlet-mapping>
+
+</web-app>
